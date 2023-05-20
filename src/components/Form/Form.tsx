@@ -4,7 +4,7 @@ import styles from './Form.module.css'
 export default function Form() {
   return (
     <form className={styles.novaTarefa}>
-    <div className="inputContainer">
+    <div className={styles.inputContainer}>
       <label htmlFor="tarefa">
         Adicione um novo estudo
       </label>
@@ -16,7 +16,7 @@ export default function Form() {
         required
       />
     </div>
-    <div className="inputContainer">
+    <div className={styles.inputContainer}>
       <label htmlFor="tempo">
         Tempo
       </label>

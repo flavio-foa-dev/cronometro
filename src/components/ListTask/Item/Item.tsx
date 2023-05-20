@@ -1,4 +1,4 @@
-
+import styles from "./Item.module.css"
 interface IItem {
 
   tarefa: string;
@@ -8,10 +8,10 @@ interface IItem {
 export default function Item({tarefa, tempo}: IItem) {
   return (
     <li
-      className="item"
+      className={styles.item}
     >
-      <h3>{tarefa}</h3>
-      <span>{tempo}</span>
+      <h3 className={styles.item_title}>{tarefa}</h3>
+      <span className={styles.item_tempo}>{tempo}</span>
     </li>
   )
 }
