@@ -1,36 +1,66 @@
+import { useContext, useState } from 'react'
 import Button from '../button'
 import styles from './Form.module.css'
+import { ContextTask } from '../../context/TaskContext'
 
 export default function Form() {
+  const {tasks, setTasks} = useContext<any>(ContextTask)
+  const [state, setState]= useState({
+    tarefa:"",
+    tempo:"00:00"
+  })
+
+  function handleChange(e:React.ChangeEvent<HTMLInputElement>){
+    e.preventDefault()
+    setState({...state, [e.target.name]: e.target.value})
+    console.log(state)
+  }
+
+  function handleSubmit(e:React.FormEvent<HTMLFormElement>){
+    e.preventDefault()
+    setTasks([...tasks, state])
+    setState({
+      tarefa:"",
+      tempo:"00:00"
+    })
+  }
+
   return (
-    <form className={styles.novaTarefa}>
+    <form className={styles.novaTarefa} onSubmit={handleSubmit}>
     <div className={styles.inputContainer}>
-      <label htmlFor="tarefa">
+      <label htmlFor="tarefa" className={styles.label_input}>
         Adicione um novo estudo
       </label>
       <input
+        className={styles.input_task}
+        autoFocus
         type="text"
         name="tarefa"
         id="tarefa"
         placeholder="O que você quer estudar"
+        value={state.tarefa}
+        onChange={(e)=>handleChange(e)}
         required
       />
     </div>
     <div className={styles.inputContainer}>
-      <label htmlFor="tempo">
+      <label htmlFor="tempo" className={styles.label_input}>
         Tempo
       </label>
       <input
+        className={styles.input_task}
         type="time"
         step="1"
         name="tempo"
         id="tempo"
         min="00:00:00"
-        max="01:30:00"
+        max="02:00:00"
+        value={state.tempo}
+        onChange={(e)=>handleChange(e)}
         required
       />
     </div>
-    <Button type="button" text={"Adicionar"}/>
+    <Button type="submit" text={"Adicionar"}/>
   </form>
   )
 }

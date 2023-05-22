@@ -1,19 +1,20 @@
 .item {
-  background-color: #4D4D4D;
-  border-radius: 8px;
+  background-color: var(--Cinza-medio);
+  border-radius: 15px;
   box-shadow: 2px 4px 4px #0000009F;
   padding: 12px;
   margin-bottom: 8px;
-  position: relative;
   cursor: pointer;
+  margin-bottom: 12px;
 }
 
-item_title {
+
+.item_title {
   margin-bottom: 8px;
   word-break: break-all;
 }
 
-item_tempo {
+.item_tempo {
   color: #D0D0D0;
 }
 

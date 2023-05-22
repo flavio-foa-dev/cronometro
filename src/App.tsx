@@ -7,10 +7,10 @@ import Lista from './components/ListTask/ListTask'
 function App() {
   return (
     <>
-     <h1>hello</h1>
+
      <Form />
-     <Lista/>
      <Cronometro />
+     <Lista/>
     </>
   )
 }

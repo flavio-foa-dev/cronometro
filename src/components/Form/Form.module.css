@@ -1,32 +1,35 @@
   .novaTarefa {
     display:flex;
     flex-direction: column;
-    grid-area: nova-tarefa;
-    background-color: #7687A1;
-    border-radius: 10px;
+    background-color: var(--Cinza-claro);
+    border-radius: 15px;
     box-shadow: 2px 4px 4px #0000009F;
     padding: 12px;
+
+
   }
 
   .inputContainer {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 80%;
     margin-bottom: 16px;
+    width: 100%;
+
   }
 
-  label {
+  .label_input {
     margin-bottom: 8px;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 
-  input {
+  .input_task {
     width: 100%;
     padding: 8px 12px 4px;
     box-sizing: border-box;
     border: unset;
     border-radius: 5px;
-    background-color: #5D677C;
+    background-color: var(--Cinza-medio);
     box-shadow: 0px 2px 4px #2D2B2B9F inset;
 
     &::placeholder {

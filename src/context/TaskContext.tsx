@@ -1,6 +1,8 @@
 import {ReactNode, createContext, useState} from "react"
 
-export const ContextTask = createContext([])
+
+
+export const ContextTask = createContext({})
 ContextTask.displayName = "Task"
 
 type Children = { children: ReactNode}
@@ -24,9 +26,7 @@ const task = [
 export function ProviderTask({children}: Children) {
   const [tasks, setTasks] = useState(task)
 
-
   const value = {tasks, setTasks}
-
   return <ContextTask.Provider value={value}>
     {children}
   </ContextTask.Provider>

@@ -1,6 +1,5 @@
 import styles from "./Item.module.css"
 interface IItem {
-
   tarefa: string;
   tempo: string;
 }

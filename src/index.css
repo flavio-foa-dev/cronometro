@@ -93,3 +93,8 @@ body {
 ::-webkit-scrollbar-thumb:hover {
 	background: #555;
 }
+
+:root {
+	--Cinza-medio: #5D677C;
+	--Cinza-claro: #9c9ea1;
+}
