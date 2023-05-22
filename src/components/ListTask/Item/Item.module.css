@@ -18,6 +18,11 @@
   color: #D0D0D0;
 }
 
+.itemSelected {
+  background-color: #6e370a;
+  box-shadow: 2px 4px 4px #5c5c5c9f inset;
+  }
+
 @media screen and (min-width:1280px) {
   .item{
     font-size: 1.8rem;

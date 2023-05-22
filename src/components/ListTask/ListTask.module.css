@@ -18,10 +18,7 @@
   scrollbar-width: thin;
 }
 
-.itemSelecionado {
-background-color: #292929;
-box-shadow: 2px 4px 4px #0000009F inset;
-}
+
 
 .itemCompletado {
   background-color: #566F42;

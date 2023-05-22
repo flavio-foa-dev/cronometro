@@ -9,16 +9,18 @@ type Children = { children: ReactNode}
 
 const task = [
   {
-    tarefa: 'React',
-    tempo: '02:00:00'
+    id: 1,
+    task: 'React',
+    time: '02:00:00',
+    selected: false,
+    completed: false,
   },
   {
-    tarefa: 'Javascript',
-    tempo: '01:00:00'
-  },
-  {
-    tarefa: "Typescript",
-    tempo: "03:00:00"
+    id: 2,
+    task: "Typescript",
+    time: "03:00:00",
+    selected: false,
+    completed: false,
   }
 ]
 

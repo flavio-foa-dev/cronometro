@@ -2,24 +2,23 @@ import { useContext } from 'react';
 import Item from './Item/Item';
 import styles from './ListTask.module.css';
 import { ContextTask } from '../../context/TaskContext';
-
+import { useTaskCompleted } from '../../context/TaskSelected';
+import ITasks from '../../types/ITasks';
 
 
 function Lista() {
-  const {tasks, setTasks} = useContext<any>(ContextTask)
+  const {tasks} = useContext<any>(ContextTask)
 
-  function addTask(){
-    setTasks([...tasks, {tarefa: "pintar", tempo:"00:00:00"}])
-  }
-
+  const {selectTask} = useTaskCompleted()
   return (
     <aside className={styles.lista_tarefas}>
-      <h2 className={styles.task_title} onClick={()=> addTask() }>Adicione uma Tarefa </h2>
+      <h2 className={styles.task_title}>Adicione uma Tarefa</h2>
       <ul className={styles.task_ul}>
-        {tasks.map((item:any, index:number) => (
+        {tasks.map((item: ITasks) => (
           <Item
-          key={index}
-          {...item}
+            key={item.id}
+            selectTask={selectTask}
+            {...item}
           />
         ))}
       </ul>

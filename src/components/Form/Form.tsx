@@ -2,12 +2,13 @@ import { useContext, useState } from 'react'
 import Button from '../button'
 import styles from './Form.module.css'
 import { ContextTask } from '../../context/TaskContext'
+import {v4 as uuidv4} from "uuid"
 
 export default function Form() {
   const {tasks, setTasks} = useContext<any>(ContextTask)
   const [state, setState]= useState({
     tarefa:"",
-    tempo:"00:00"
+    tempo:"00:00",
   })
 
   function handleChange(e:React.ChangeEvent<HTMLInputElement>){
@@ -18,7 +19,15 @@ export default function Form() {
 
   function handleSubmit(e:React.FormEvent<HTMLFormElement>){
     e.preventDefault()
-    setTasks([...tasks, state])
+    setTasks(
+      [...tasks,
+        {
+          ...state,
+          id: uuidv4(),
+          selected: false,
+          completed: false
+        }
+      ])
     setState({
       tarefa:"",
       tempo:"00:00"
