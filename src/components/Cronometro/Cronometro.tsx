@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { convertTimeToSeg } from "../../utils/time";
 
 export default function Cronometro() {
-  const {taskCompleted}:any = useTaskCompleted()
+  const {taskCompleted, completeTask}:any = useTaskCompleted()
   let selectedTime = taskCompleted.time
   const [tempo, setTempo]=useState<number>()
 
@@ -15,6 +15,18 @@ export default function Cronometro() {
 useEffect(()=>{
   setTempo(convertTimeToSeg(selectedTime))
 },[taskCompleted])
+
+function tempRegressive(tempo: number = 0){
+
+  console.log(tempo)
+  setTimeout(() => {
+    if (tempo > 0) {
+      setTempo(tempo - 1)
+      return tempRegressive(tempo -1)
+    }
+    completeTask()
+  },1000)
+}
 
   return (
     <div className={styles.cronometro}>
@@ -24,7 +36,7 @@ useEffect(()=>{
         <Relogio time={tempo}/>
       </div>
       <Button
-        onClick={()=> console.log("ola")}
+        onClick={()=>  tempRegressive(tempo)}
         type="button"
         text="Iniciar"
       />

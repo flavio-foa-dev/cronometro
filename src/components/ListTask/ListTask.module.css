@@ -20,23 +20,7 @@
 
 
 
-.itemCompletado {
-  background-color: #566F42;
-  cursor: auto;
 
-  .concluido {
-    display: block;
-    background-image: url('../../assets/img/check-mark.svg');
-    background-repeat: no-repeat;
-    background-size: 38px 38px;
-    position: absolute;
-    top: 50%;
-    right: 12px;
-    transform: translateY(-50%);
-    width: 42px;
-    height: 43px;
-  }
-}
 
 @media screen and (min-width:1280px) {
 

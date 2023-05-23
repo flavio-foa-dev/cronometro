@@ -29,9 +29,24 @@ export function useTaskCompleted() {
     }))))
   }
 
+  function completeTask(){
+
+    setTasks((taskAfter:any)=> taskAfter.map(((task:any) => {
+      if(task.id === taskCompleted.id){
+        return {
+          ...task,
+          selected: false,
+          completed: true
+        }
+      }
+      return task
+    })))
+  }
+
   return{
     taskCompleted,
     setTaskCompleted,
     selectTask,
+    completeTask,
   }
 }

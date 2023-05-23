@@ -23,8 +23,36 @@
   box-shadow: 2px 4px 4px #5c5c5c9f inset;
   }
 
+
+
+.itemCompletado {
+  display: flex;
+  justify-content: space-between;
+  background-color: #566F42;
+  cursor: auto;
+
+
+
+}
+
+.item_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.concluido {
+  display: flex;
+  background-size: 35px 35px;
+  height: 35px;
+  background-image: url('../../../assets/img/check-mark.svg');
+  background-repeat: no-repeat;
+  width: 8%;
+}
+
+
 @media screen and (min-width:1280px) {
-  .item{
-    font-size: 1.8rem;
+  .concluido{
+    width: 5%;
   }
 }
