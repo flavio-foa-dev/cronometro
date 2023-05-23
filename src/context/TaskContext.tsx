@@ -11,14 +11,14 @@ const task = [
   {
     id: 1,
     task: 'React',
-    time: '02:00:00',
+    time: '01:01:01',
     selected: false,
     completed: false,
   },
   {
     id: 2,
     task: "Typescript",
-    time: "03:00:00",
+    time: "02:00:00",
     selected: false,
     completed: false,
   }

@@ -7,8 +7,8 @@ import {v4 as uuidv4} from "uuid"
 export default function Form() {
   const {tasks, setTasks} = useContext<any>(ContextTask)
   const [state, setState]= useState({
-    tarefa:"",
-    tempo:"00:00",
+    task:"",
+    time:"00:00",
   })
 
   function handleChange(e:React.ChangeEvent<HTMLInputElement>){
@@ -29,25 +29,25 @@ export default function Form() {
         }
       ])
     setState({
-      tarefa:"",
-      tempo:"00:00"
+      task:"",
+      time:"00:00"
     })
   }
 
   return (
     <form className={styles.novaTarefa} onSubmit={handleSubmit}>
     <div className={styles.inputContainer}>
-      <label htmlFor="tarefa" className={styles.label_input}>
+      <label htmlFor="task" className={styles.label_input}>
         Adicione um novo estudo
       </label>
       <input
         className={styles.input_task}
         autoFocus
         type="text"
-        name="tarefa"
-        id="tarefa"
+        name="task"
+        id="task"
         placeholder="O que você quer estudar"
-        value={state.tarefa}
+        value={state.task}
         onChange={(e)=>handleChange(e)}
         required
       />
@@ -60,11 +60,11 @@ export default function Form() {
         className={styles.input_task}
         type="time"
         step="1"
-        name="tempo"
-        id="tempo"
+        name="time"
+        id="time"
         min="00:00:00"
         max="02:00:00"
-        value={state.tempo}
+        value={state.time}
         onChange={(e)=>handleChange(e)}
         required
       />
